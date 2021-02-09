@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user attr="1">
+        <name>11111111111111</name>
+        <email>11111111111111</email>
+        <login>Petrushka11@mail.ru</login>
+        <password>593c9b4a9390551d53e5cacf28ebd638</password>
+    </user>
+    <user attr="1">
+        <name>Petro</name>
+        <email>Petro@mail.ru</email>
+        <login>Petrushka12</login>
+        <password>123456</password>
+    </user>
+    
+    <user attr="1">
+        <name>111111111111</name>
+        <email>PERer@mail.ru</email>
+        <login>Petrushka14</login>
+        <password>593c9b4a9390551d53e5cacf28ebd638</password>
+    </user>
+
+
+<user><login>Petrushka118</login><password>c8ee9dac7025d41327c113b7a7989435</password><email>PipkaSmolle@gmail.com</email><name>Petrushka11</name></user>
+<user><login>djeuzik</login><password>e10adc3949ba59abbe56e057f20f883e</password><email>turbcaffe@gmail.com</email><name>qwe</name></user><user><login>djeuzik12</login><password>e10adc3949ba59abbe56e057f20f883e</password><email>karalina.ar@gmail.com</email><name>123</name></user></users>
