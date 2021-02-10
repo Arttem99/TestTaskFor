@@ -16,7 +16,7 @@ session_start();
 </head>
     <body>
     <div class="data-user">
-        <h2 class="user"><?php if ($_SESSION['login']!="") echo $_SESSION['login'];?></h2> <input type="button" value="Exit" id="btn-exit">
+        <h2 class="user"><?php if ($_SESSION['name']!="") echo "Hello ".$_SESSION['name'];?></h2> <input type="button" value="Exit" id="btn-exit">
     </div>
         <div class="authorization div_field">
             <form>
@@ -24,9 +24,10 @@ session_start();
                 <div class="block_auth"><span>Password: </span> <input type="password" placeholder="Password" id="password-auth"></div>
                 <input type="button" id="btn_log_in" value="Log In">
             </form>
+
         </div>
-        <input type="checkbox" id="isRegistration" value="false" placeholder="Авторизоваться"><span>Зарегистрироваться</span>
-        <div class="registration div_field">
+            <div class="block_check div_field"><input type="checkbox" id="isRegistration" value="false" placeholder="Авторизоваться"><span>Зарегистрироваться</span></div>
+            <div class="registration div_field">
             <form>
                 <div class="block_login"><span>Login: </span> <input type="text" placeholder="Login" id="login"><span id="err_login" class="error"></span></div>
                 <div class="block_pass"><span>Password: </span> <input type="password" placeholder="Password" id="password"><span id="err_pass" class="error"></span></div>

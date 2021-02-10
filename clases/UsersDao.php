@@ -19,6 +19,7 @@ class UsersDao
         $userData = array();
         foreach ($users->user as $user){
             $userData[] =  array("login"=>$user->login, "password"=>$user->password, "email"=>$user->email, "name"=>$user->name);
+//            $userData[] =  array($user->login, $user->password, $user->email, $user->name);
         }
         return $userData;
     }

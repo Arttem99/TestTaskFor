@@ -59,5 +59,8 @@ function authorization(){
 }
 
 function exits(){
-    $_SESSION["login"] ="";
+    unset($_SESSION['name']);
+    session_destroy();
+//    $_SESSION["login"] ;
+    echo $_SESSION["name"];
 }

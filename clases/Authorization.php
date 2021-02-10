@@ -17,10 +17,10 @@ class Authorization
         foreach ($userData as $usData){
             if ($usData["login"] == $user->getLogin()){
                 if ($usData["password"] == md5($user->getPassword())){
-                    $name = $usData["name"];
-                    setcookie("login", $usData["login"]);
-                    $_SESSION["login"] = $user->getLogin();
-                    exit(json_encode(array("result"=>"true", "user"=>$name)));
+                    setcookie("login", strval($usData["login"]));
+                    $_SESSION["login"] = strval($usData["login"]);
+                    $_SESSION["name"] = strval($usData["name"]);
+                    exit(json_encode(array("result"=>"true", "user"=>strval($usData["name"]))));
                 }
             }
         }

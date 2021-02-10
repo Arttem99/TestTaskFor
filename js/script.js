@@ -3,6 +3,8 @@ var password;
 var name;
 var email;
 
+document.addEventListener("DOMContentLoaded", isUser);
+
 function StringMoreSymbols(string, length) {
         if (string.length < length){
             return false;
@@ -193,8 +195,9 @@ $("#btn_log_in").click(function (e) {
             },
             success: function (data) {
                 if (data.result == "true"){
-                    $(".user").html("Hello " +data.user["0"]);
+                    $(".user").html("Hello " +data.user);
                     $(".data-user").show();
+                    $(".div_field").hide();
 
                 }
             }
@@ -217,6 +220,23 @@ $("#btn-exit").click(function (e) {
        type:"Post",
        data:{
            method:"exit"
+       },
+       success:function (data) {
+           $(".user").html(data);
+           isUser();
        }
    });
 });
+
+function isUser(){
+   if ($(".user").html()!=""){
+       $(".div_field").hide();
+       // $("#isRegistration").hide();
+   }
+   else {
+       $(".data-user").hide();
+       $(".authorization").show();
+       $(".block_check").show();
+   }
+}
+
