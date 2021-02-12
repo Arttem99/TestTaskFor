@@ -203,6 +203,12 @@ $("#btn_log_in").click(function (e) {
                     $(".div_field").hide();
                     clearField();
                 }
+                else {
+                    $('#error').fadeIn().html(data.string);
+                    setTimeout(function () {
+                        $('#error').fadeOut("Slow");
+                    }, 4000);
+                }
             }
 
         });

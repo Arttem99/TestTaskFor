@@ -50,8 +50,9 @@ function authentication($user)
             }
 
         }
-
-
+        else{
+            generation_exception("Проверьте введенные данные !", "login");
+        }
     }
 }
 
