@@ -13,7 +13,7 @@ function StringMoreSymbols(string, length) {
             return true;
         }
 }
-
+login = $('#login').val();
 $('#login').change(function () {
    if (!StringMoreSymbols($('#login').val(), 6)){
        $('#err_login').fadeIn().html('Логин должен состоять минимум из 6 символов!');
@@ -26,18 +26,30 @@ $('#login').change(function () {
    }
 });
 
-
+password = $('#password').val();
 $('#password').change(function () {
-    if (!StringMoreSymbols($('#password').val(), 6)){
-        $('#err_pass').fadeIn().html('Пароль должен состоять минимум из 6 символов!');
-        setTimeout(function () {
-            $('#err_pass').fadeOut("Slow");
-        }, 4000);
-    }
-    else {
-        password = $('#password').val();
+    if (StringMoreSymbols($('#password').val(), 6)){
+       if (isPassword($('#password').val()))
+       {
+           password = $('#password').val();
+       }
+       else {
+           $('#err_pass').fadeIn().html('Пароль должен состоять минимум из 6 символов, обязательно должны содержать цифру, буквы в разных регистрах и спец символ (знаки)!');
+           setTimeout(function () {
+               $('#err_pass').fadeOut("Slow");
+           }, 4000);
+       }
     }
 });
+
+function isPassword(password){
+    var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    if (!regex.test(password)) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 $('#comf_pass').change(function () {
     if (!IsMatchingPasswords()){
@@ -58,7 +70,7 @@ function IsMatchingPasswords() {
     }
 }
 
-
+name = $('#name_user').val();
 $('#name_user').change(function () {
     if (!StringMoreSymbols($('#name_user').val(), 2 )){
         $('#err_user').fadeIn().html('Имя должено содежать минимум 2 символа!');
@@ -81,6 +93,7 @@ function IsEmail(email) {
     }
 }
 
+email = $('#email').val();
 $('#email').change(function () {
     if ($('#email').val() == ""){
         $('#err_email').fadeIn().html('Заполните поле!');
@@ -118,9 +131,10 @@ $("#isRegistration").click(function () {
 
 $('#btn_sign_up').click(function (e) {
     e.preventDefault();
-        if (StringMoreSymbols(login, 6) && StringMoreSymbols(name, 2) && IsMatchingPasswords() && IsEmail(email)) {
+        if (StringMoreSymbols(login, 6) && StringMoreSymbols(name, 2) &&
+            IsMatchingPasswords() && IsEmail(email)) {
             $.ajax({
-                url: "../scripts/function.php",
+                url: "../scripts/action.php",
                 type: "Post",
                dataType: "json",
                 data: {
@@ -136,6 +150,11 @@ $('#btn_sign_up').click(function (e) {
                     } else {
                         $(".registration").hide();
                         $('#error').fadeIn().html(data.string);
+                        $(".user").html("Hello " +data.user);
+                        $(".data-user").show();
+                        isUser();
+                        viewDataUser();
+                        clearField();
                     }
                 }
             });
@@ -164,41 +183,25 @@ function definitionField(field, string) {
     }
 }
 
-$(".update #btn_update_user").click(function (e) {
-    e.preventDefault();
-    $.ajax({
-       url: "../scripts/function.php",
-       type: "POST",
-        data:{
-           method:"update",
-           login: $(".update #login").val(),
-           password: $(".update #password").val(),
-           email: $(".update #email").val(),
-           name: $(".update #name").val()
-        }
-    });
-
-});
 
 $("#btn_log_in").click(function (e) {
     e.preventDefault();
     if ($(".block_auth #login-auth").val().length != 0 && $(".block_auth #password-auth").val().length !=0){
-
         $.ajax({
-           url:"../scripts/function.php",
+           url:"../scripts/action.php",
             type:"Post",
             dataType: "json",
             data:{
                method: "authorization",
-                login: $(".block_auth #login-auth").val(),
-                password: $(".block_auth #password-auth").val()
+                login: $("#login-auth").val(),
+                password: $("#password-auth").val()
             },
             success: function (data) {
                 if (data.result == "true"){
                     $(".user").html("Hello " +data.user);
                     $(".data-user").show();
                     $(".div_field").hide();
-
+                    clearField();
                 }
             }
 
@@ -216,7 +219,7 @@ $("#btn_log_in").click(function (e) {
 $("#btn-exit").click(function (e) {
    e.preventDefault();
    $.ajax({
-       url: "../scripts/function.php",
+       url: "../scripts/action.php",
        type:"Post",
        data:{
            method:"exit"
@@ -229,6 +232,7 @@ $("#btn-exit").click(function (e) {
 });
 
 function isUser(){
+    $("#btn_update").hide();
    if ($(".user").html()!=""){
        $(".div_field").hide();
        // $("#isRegistration").hide();
@@ -240,3 +244,111 @@ function isUser(){
    }
 }
 
+
+
+var valLogin ;
+$("button.btn_delete_user").click(function (event) {
+    var button = event.target;
+    valLogin = button.value;
+});
+
+$("button.btn_edit_user").click(function (event) {
+    var button = event.target;
+    valLogin = button.value;
+});
+
+function viewDataUser(){
+    $.ajax({
+        url: "../scripts/action.php",
+        type: "POST",
+        data:{
+            method: "viewInfo"
+        },
+        success: function (data) {
+            $(".outputData").html(data);
+        }
+    });
+}
+
+function getInfo(){
+    $.ajax({
+        url: "../scripts/action.php",
+        type: "POST",
+        dataType: "json",
+        data:{
+            method: "getInfo",
+            login: valLogin
+        },
+        success: function (data) {
+            $("#login").val(data.login);
+            login = data.login;
+            $("#password").val(data.pass);
+            password = data.pass;
+            $("#email").val(data.email);
+            email = data.email;
+            $("#name_user").val(data.name);
+            name = data.name;
+            $("#btn_sign_up").hide();
+            $("#btn_update").show();
+
+        }
+    });
+}
+
+$(".btn_delete_user").click(function (e) {
+    e.preventDefault();
+    $.ajax({
+       url: "../scripts/action.php",
+        type: "POST",
+        data:{
+           method: "delete",
+           login: valLogin
+        },
+        success: function (data) {
+            $(".outputData").html(data);
+        }
+    });
+});
+
+$(".btn_edit_user").click(function (e) {
+    e.preventDefault();
+    $(".block_conf_pass").hide();
+    getInfo();
+
+});
+$("#btn_update").click(function (e) {
+   e.preventDefault();
+    if (StringMoreSymbols(login, 6) && StringMoreSymbols(name, 2) && IsEmail(email)) {
+        $.ajax({
+            url: "../scripts/action.php",
+            type: "POST",
+            data: {
+                method: "update",
+                new_login: login,
+                new_password: password,
+                new_email: email,
+                new_name: name
+            },
+            success: function (data) {
+                viewDataUser();
+                $("#btn_sign_up").show();
+                $("#btn_update").hide();
+                $(".block_conf_pass").show();
+                clearField();
+            }
+        });
+    }
+});
+
+function clearField() {
+    $("#login").val('');
+    $("#login-auth").val('');
+    $("#password").val('');
+    $("#password-auth").val('');
+    $("#email").val('');
+    $("#name_user").val('');
+}
+
+$("#btn-admin").click(function () {
+   window.open("../Admin.php")
+});

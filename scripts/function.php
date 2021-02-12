@@ -1,66 +1,62 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/clases/Registration.php";
-require_once $_SERVER['DOCUMENT_ROOT']."/clases/Authorization.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/clases/UsersDao.php";
-session_start();
-function generation_exception($string, $field){
-    exit(json_encode(array('result' => 'false', 'string'=> $string, 'field'=>$field)));
+require_once $_SERVER['DOCUMENT_ROOT'] . "/clases/Connect_DB.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/clases/User.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/clases/UsersDao.php";
+function outputDataUser(){
+
+$userData = new UsersDao();
+$users = $userData->getAll();
+$output = '
+<table>
+    <tr>
+        <th>Login</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Name</th>
+    </tr>
+    <div>';
+        foreach ($users as $user) {
+            $output .= '         
+            <tr>
+                <td>' . strval($user["login"]) . '</td>
+                <td>' . strval($user["password"]) . '</td>
+                <td>' . strval($user["email"]) . '</td>
+                <td>' . strval($user["name"]) . '</td>
+                <td><button class="btn_edit_user" value=' . strval($user["login"]) . '>Edit</button></td>
+                <td><button class="btn_delete_user" value=' . strval($user["login"]) . '>Delete</button></td>
+            </tr>';
+        }
+$output .='
+             </div>
+            </table>';
+        echo $output;
 }
 
-if (isset($_POST["method"])){
-    if ($_POST["method"] == "data_transfer_for_Registration")
-    {
-        data_transfer_for_Registration();
+function authentication($user)
+{
+    $userDao = new UsersDao();
+    $userData = $userDao->getAll();
+    foreach ($userData as $usData){
+        if (strval($usData["login"]) == $user->getLogin()){
+            if (strval($usData["password"]) == ($userDao->salt . md5(trim($user->getPassword())))){
+                setcookie("login", strval($usData["login"]));
+                $_SESSION["login"] = strval($usData["login"]);
+                $_SESSION["name"] = strval($usData["name"]);
+                exit(json_encode(array("result"=>"true", "user"=>strval($usData["name"]))));
+            }
+
+        }
+
+
     }
-    if ($_POST["method"] == "update")
-    {
-        update();
-    }
-    if ($_POST["method"] == "authorization")
-    {
-        authorization();
-    }
-    if ($_POST["method"] == "exit")
-    {
-        exits();
+}
+
+function appendUser($user){
+    $userDao = new UsersDao();
+    if ($userDao->checkLoginDb($user->getLogin()) && $userDao->checkEmailDb($user->getEmail())){
+        $userDao->insert($user);
+        authentication($user);
     }
 }
 
 
-
-function data_transfer_for_Registration(){
-    $user = new User();
-    $user->setLogin($_POST["login"]);
-    $user->setPassword($_POST["password"]);
-    $user->setEmail($_POST["email"]);
-    $user->setName($_POST["name"]);
-    $Adduser = new Registration();
-    $Adduser->appendUser($user);
-
-}
-
-function update(){
-    $user = new User();
-    $user->setLogin($_POST["login"]);
-    $user->setPassword($_POST["password"]);
-    $user->setEmail($_POST["email"]);
-    $user->setName($_POST["name"]);
-    $das = new UsersDao();
-    $das->update($user);
-
-}
-
-function authorization(){
-    $user = new User();
-    $user->setLogin($_POST["login"]);
-    $user->setPassword($_POST["password"]);
-    $authUser = new Authorization();
-    $authUser->authentication($user);
-}
-
-function exits(){
-    unset($_SESSION['name']);
-    session_destroy();
-//    $_SESSION["login"] ;
-    echo $_SESSION["name"];
-}
