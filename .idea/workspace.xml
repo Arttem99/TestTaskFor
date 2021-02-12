@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9542a509-4edd-4092-a356-9b1a29198bae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/action.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clases/Authorization.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clases/Registration.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clases/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/clases/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clases/UsersDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/clases/UsersDao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clases/ValidateUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database/db.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/action.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/function.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +19,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4053">
@@ -40,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/db.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="303" selection-start-line="6" selection-start-column="292" selection-end-line="6" selection-end-column="303" />
+            <state relative-caret-position="63">
+              <caret line="3" column="567" selection-start-line="3" selection-start-column="567" selection-end-line="3" selection-end-column="567" />
             </state>
           </provider>
         </entry>
@@ -49,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clases/UsersDao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="85" />
+            <state relative-caret-position="42">
+              <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -58,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/action.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-186">
-              <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+            <state relative-caret-position="63">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -76,17 +67,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="801">
+            <state relative-caret-position="840">
               <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+            <state relative-caret-position="189">
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -132,16 +123,16 @@
         <option value="$PROJECT_DIR$/scripts/test.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/Admin.php" />
-        <option value="$PROJECT_DIR$/database/db.xml" />
-        <option value="$PROJECT_DIR$/clases/UsersDao.php" />
         <option value="$PROJECT_DIR$/js/script.js" />
-        <option value="$PROJECT_DIR$/scripts/function.php" />
-        <option value="$PROJECT_DIR$/scripts/action.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/database/db.xml" />
+        <option value="$PROJECT_DIR$/scripts/action.php" />
+        <option value="$PROJECT_DIR$/scripts/function.php" />
+        <option value="$PROJECT_DIR$/clases/UsersDao.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="655" />
     <option name="y" value="36" />
     <option name="width" value="659" />
@@ -160,6 +151,11 @@
             <path>
               <item name="authoriz-regist" type="b2602c69:ProjectViewProjectNode" />
               <item name="authoriz-regist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="authoriz-regist" type="b2602c69:ProjectViewProjectNode" />
+              <item name="authoriz-regist" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -220,12 +216,12 @@
       <updated>1612534624326</updated>
       <workItem from="1612534625470" duration="95429000" />
       <workItem from="1612993089288" duration="11067000" />
-      <workItem from="1613054607312" duration="25306000" />
+      <workItem from="1613054607312" duration="25883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131802000" />
+    <option name="totallyTimeSpent" value="132379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -309,17 +305,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4053">
+          <caret line="193" column="18" lean-forward="true" selection-start-line="193" selection-start-column="18" selection-end-line="193" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/db.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="303" selection-start-line="6" selection-start-column="292" selection-end-line="6" selection-end-column="303" />
+        <state relative-caret-position="63">
+          <caret line="3" column="567" selection-start-line="3" selection-start-column="567" selection-end-line="3" selection-end-column="567" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clases/UsersDao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/action.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
-          <caret line="67" column="43" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="43" />
+        <state relative-caret-position="63">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -332,29 +342,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="801">
+        <state relative-caret-position="840">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clases/UsersDao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4053">
-          <caret line="193" column="18" lean-forward="true" selection-start-line="193" selection-start-column="18" selection-end-line="193" selection-end-column="18" />
+        <state relative-caret-position="189">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>

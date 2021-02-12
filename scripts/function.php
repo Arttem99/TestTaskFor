@@ -2,8 +2,12 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/clases/Connect_DB.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/clases/User.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/clases/UsersDao.php";
-function outputDataUser(){
 
+function generation_exception($string, $field){
+    exit(json_encode(array('result' => 'false', 'string'=> $string, 'field'=>$field)));
+}
+
+function outputDataUser(){
 $userData = new UsersDao();
 $users = $userData->getAll();
 $output = '

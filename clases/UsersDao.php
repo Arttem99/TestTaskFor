@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/clases/Connect_DB.php";
-require_once $_SERVER["DOCUMENT_ROOT"] . "/scripts/action.php";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/scripts/function.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/clases/User.php";
 
 class UsersDao

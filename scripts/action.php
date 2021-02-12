@@ -3,10 +3,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/clases/UsersDao.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/scripts/function.php";
 session_start();
 
-function generation_exception($string, $field){
-    exit(json_encode(array('result' => 'false', 'string'=> $string, 'field'=>$field)));
-}
-
 if (isset($_POST["method"])){
     if ($_POST["method"] == "data_transfer_for_Registration")
     {
