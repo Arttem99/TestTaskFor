@@ -13,7 +13,7 @@ function StringMoreSymbols(string, length) {
     }
 }
 
-function IsLoginValid(login){
+function IsLoginValid(login) {
     // var regex = /^[а-яА-ЯёЁa-zA-Z0-9]+$/;
     var regex = /^[а-яА-ЯёЁa-zA-Z0-9]{6,}$/;
     if (!regex.test(login)) {
@@ -23,9 +23,9 @@ function IsLoginValid(login){
     }
 }
 
-$('body').on('change', '#login',function (e) {
+$('body').on('change', '#login', function (e) {
     e.preventDefault();
-    if (!IsLoginValid($('#login').val())){
+    if (!IsLoginValid($('#login').val())) {
         $('#err_login').fadeIn().html('Логин должен состоять минимум из 6 символов! Логин должен сожержать только буквы и цифры');
         setTimeout(function () {
             $('#err_login').fadeOut("Slow");
@@ -37,14 +37,14 @@ $('body').on('change', '#login',function (e) {
 
 $('#password').change(function (e) {
     e.preventDefault();
-        if (isPassword($('#password').val())) {
-            password = $('#password').val();
-        } else {
-            $('#err_pass').fadeIn().html('Пароль должен состоять минимум из 6 символов, обязательно должны содержать цифру, буквы в разных регистрах и спец символ (знаки)!');
-            setTimeout(function () {
-                $('#err_pass').fadeOut("Slow");
-            }, 4000);
-        }
+    if (isPassword($('#password').val())) {
+        password = $('#password').val();
+    } else {
+        $('#err_pass').fadeIn().html('Пароль должен состоять минимум из 6 символов, обязательно должны содержать цифру, буквы в разных регистрах и спец символ (знаки)!');
+        setTimeout(function () {
+            $('#err_pass').fadeOut("Slow");
+        }, 4000);
+    }
 });
 
 function isPassword(password) {
@@ -86,14 +86,14 @@ function IsValidName(name) {
 
 $('#name_user').change(function (e) {
     e.preventDefault();
-        if (IsValidName($('#name_user').val())) {
-            name = $('#name_user').val();
-        } else {
-            $('#err_user').fadeIn().html('Имя должено содежать минимум 2 символа из букв и цифр');
-            setTimeout(function () {
-                $('#err_user').fadeOut("Slow");
-            }, 4000);
-        }
+    if (IsValidName($('#name_user').val())) {
+        name = $('#name_user').val();
+    } else {
+        $('#err_user').fadeIn().html('Имя должено содежать минимум 2 символа из букв и цифр');
+        setTimeout(function () {
+            $('#err_user').fadeOut("Slow");
+        }, 4000);
+    }
 });
 
 function IsEmail(email) {
@@ -108,14 +108,14 @@ function IsEmail(email) {
 email = $('#email').val();
 $('#email').change(function (e) {
     e.preventDefault();
-        if (IsEmail($('#email').val()) == false) {
-            $('#err_email').fadeIn().html('Введите емайл верно!');
-            setTimeout(function () {
-                $('#err_email').fadeOut("Slow");
-            }, 4000);
-        } else {
-            email = $('#email').val();
-        }
+    if (IsEmail($('#email').val()) == false) {
+        $('#err_email').fadeIn().html('Введите емайл верно!');
+        setTimeout(function () {
+            $('#err_email').fadeOut("Slow");
+        }, 4000);
+    } else {
+        email = $('#email').val();
+    }
 });
 $(".registration").hide();
 
@@ -132,7 +132,7 @@ $("#isRegistration").click(function () {
 });
 
 
-$('body').on('click','#btn_sign_up',function (e) {
+$('body').on('click', '#btn_sign_up', function (e) {
     e.preventDefault();
     if (StringMoreSymbols(login, 6) && StringMoreSymbols(name, 2) &&
         IsMatchingPasswords() && IsEmail(email)) {
@@ -305,8 +305,9 @@ $("body").on('click', '.btn_delete_user', function (e) {
             method: "delete",
             login: valLogin
         },
-        success: function (data) {
-            $(".outputData").html(data);
+        success: function () {
+            // $(".outputData").html(data);
+            viewDataUser();
         }
     });
 });
@@ -325,7 +326,7 @@ $("body").on('click', '#btn_update', function (e) {
         $.ajax({
             url: "../scripts/action.php",
             type: "POST",
-            dataType:"json",
+            dataType: "json",
             data: {
                 method: "update",
                 old_login: valLogin,
@@ -335,14 +336,13 @@ $("body").on('click', '#btn_update', function (e) {
                 new_name: name
             },
             success: function (data) {
-                if (data.result!="false"){
+                if (data.result != "false") {
                     viewDataUser();
                     $("#btn_sign_up").show();
                     $("#btn_update").hide();
                     $(".block_conf_pass").show();
                     clearField();
-                }
-                else {
+                } else {
                     definitionField(data.field, data.string);
                 }
 

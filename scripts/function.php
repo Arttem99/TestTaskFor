@@ -178,8 +178,10 @@ function update()
     if (checkLoginDb($user->getLogin()) && checkEmailDb($user->getEmail()) && checkPasswordValid($user->getPassword())
         && checkEmailValid($user->getEmail()) && checkNameValid($user->getName())) {
         $crud->update($_POST["old_login"], $user);
+        exit(json_encode(array('result' => "true")));
+
     }
-    outputDataUser();
+
 }
 
 function getUserInfo()
@@ -205,7 +207,6 @@ function exits()
     unset($_COOKIE['name']);
     session_destroy();
     echo $_SESSION["name"];
-
 }
 
 function deleteUser()
@@ -215,7 +216,6 @@ function deleteUser()
         $crud = new CRUD($connection);
         $crud->delete(array(getUserByLogin($_POST["login"])));
     }
-    outputDataUser();
 }
 
 function viewInfo()
