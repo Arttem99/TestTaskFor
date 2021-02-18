@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9542a509-4edd-4092-a356-9b1a29198bae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clases/CRUD.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clases/Connect_DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/clases/Connect_DB.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clases/UsersDao.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/db.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database/db.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/action.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/action.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/function.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/db.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-235">
+            <state relative-caret-position="105">
               <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
             </state>
           </provider>
@@ -74,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="17" column="99" selection-start-line="17" selection-start-column="99" selection-end-line="17" selection-end-column="99" />
+            <state>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -136,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="655" />
     <option name="y" value="36" />
     <option name="width" value="659" />
@@ -225,12 +216,12 @@
       <updated>1612534624326</updated>
       <workItem from="1612534625470" duration="95429000" />
       <workItem from="1612993089288" duration="11067000" />
-      <workItem from="1613054607312" duration="63260000" />
+      <workItem from="1613054607312" duration="63695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169756000" />
+    <option name="totallyTimeSpent" value="170191000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -344,13 +335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/db.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-235">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2919">
@@ -379,10 +363,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/db.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="17" column="99" selection-start-line="17" selection-start-column="99" selection-end-line="17" selection-end-column="99" />
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>

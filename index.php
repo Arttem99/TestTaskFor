@@ -1,7 +1,4 @@
 <?
-require_once $_SERVER['DOCUMENT_ROOT'] . "/clases/Connect_DB.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/clases/UsersDao.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/scripts/action.php";
 session_start();
 
 ?>
