@@ -321,10 +321,11 @@ $("body").on('click', '.btn_edit_user', function (e) {
 
 $("body").on('click', '#btn_update', function (e) {
     e.preventDefault();
-    if (StringMoreSymbols(login, 6) && StringMoreSymbols(name, 2) && IsEmail(email) && isPassword(password)) {
+    if (IsValidName(name) && IsLoginValid(login) && IsEmail(email)) {
         $.ajax({
             url: "../scripts/action.php",
             type: "POST",
+            dataType:"json",
             data: {
                 method: "update",
                 old_login: valLogin,
@@ -333,12 +334,19 @@ $("body").on('click', '#btn_update', function (e) {
                 new_email: email,
                 new_name: name
             },
-            success: function () {
-                viewDataUser();
-                $("#btn_sign_up").show();
-                $("#btn_update").hide();
-                $(".block_conf_pass").show();
-                clearField();
+            success: function (data) {
+                if (data.result!="false"){
+                    viewDataUser();
+                    $("#btn_sign_up").show();
+                    $("#btn_update").hide();
+                    $(".block_conf_pass").show();
+                    clearField();
+                }
+                else {
+                    definitionField(data.field, data.string);
+                }
+
+
             }
         });
     }
