@@ -1,7 +1,4 @@
-<?
-require_once $_SERVER["DOCUMENT_ROOT"] . "/clases/UsersDao.php"; ?>
-<?
-require_once $_SERVER["DOCUMENT_ROOT"] . "/scripts/function.php"; ?>
+<? require_once $_SERVER["DOCUMENT_ROOT"] . "/scripts/function.php"; ?>
     <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -12,7 +9,6 @@ require_once $_SERVER["DOCUMENT_ROOT"] . "/scripts/function.php"; ?>
         <? outputDataUser() ?>
     </div>
     <br>
-    <?php //getUserByLogin("test05Test$") ?>
     <div class="Add_Edit_User">
         <form id="operation-form">
             <div class="block_login"><span>Login: </span> <input type="text" placeholder="Login" id="login"
